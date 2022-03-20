@@ -16,14 +16,15 @@
             <h1>Vanilla ToastJs</h1>
             <p>Exemplo de criação de um componente Toast utilizando vanilla JavaScript</p>
         </section>
-    </div>
-    <div class="toast-container" data-position="top-right">
-        <div class="toast toast-success">
-            Sou um sucesso
-        </div>
-        <div class="toast toast-error">
-            Sou um erro
-        </div>
+        <div class="card">
+            <textarea rows="4" placeholder="Texto aqui..." maxlength="250"></textarea>
+            <div>
+                <button type="button" class="btn btn-success" onclick="$showToast('success')">Sucesso</button>
+                <button type="button" class="btn btn-error" onclick="$showToast('error')">Erro</button>
+                <button type="button" class="btn btn-warning" onclick="$showToast('warning')">Aviso</button>
+                <button type="button" class="btn btn-info" onclick="$showToast('info')">Info</button>
+            </div>
+        </section>
     </div>
 </body>
 

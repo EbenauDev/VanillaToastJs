@@ -1,18 +1,23 @@
 import { toast, toastProvider } from "./Toast.js";
 
-
-toastProvider.setDelay(50000);
+toastProvider.setDelay(3000);
 toastProvider.init();
 
-// setTimeout(() => {
-//     toast.success("Sou o primeiro toast");
-// }, 1000);
 
-// setTimeout(() => {
-//     toast.success("Sou o segundo toast");
-// }, 2000);
+const typesOfToasts = {
+    success: (message) => toast.success(message),
+    error: (message) => toast.error(message),
+    warning: (message) => toast.warning(message),
+    info: (message) => toast.info(message),
+}
+const textMessage = document.querySelector("textarea");
 
-// setTimeout(() => {
-//     toast.success("Sou o terceiro toast");
-// }, 3000);
+const showToast = (type) => {
+    typesOfToasts[type](textMessage.value);
+}
 
+if (!window.showToast) {
+    window["$showToast"] = showToast;
+}
+
+console.log(window);

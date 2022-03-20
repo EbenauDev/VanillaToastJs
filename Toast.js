@@ -26,6 +26,12 @@ const toast = {
     },
     error: (message) => {
         _createToaster(message, "toast-error");
+    },
+    info: (message) => {
+        _createToaster(message, "toast-info");
+    },
+    warning: (message) => {
+        _createToaster(message, "toast-warning");
     }
 }
 
